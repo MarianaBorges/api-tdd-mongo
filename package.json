@@ -1,0 +1,35 @@
+{
+  "name": "nodemongoteste",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "start": "npm run build && node dist/server.js",
+    "start:dev": "babel-node src/server.js",
+    "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*_spec.js",
+    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js",
+    "test": "npm run test:unit && npm run test:integration"
+  },
+  "author": "mariana",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.3",
+    "sinon": "^7.5.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "config": "^1.29.4",
+    "express": "^4.17.1",
+    "express-acl": "^2.0.2",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.11.14"
+  }
+}
